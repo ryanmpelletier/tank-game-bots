@@ -42,12 +42,94 @@ class BotLogic {
             this.mouseAngleIncrementTime = new Date().getTime();
         }
 
+        //I need a class with high level functions that can give me back this object
         return {
             keysPressed: this.keysPressed,
             mouseClicked:this.mouseClicked,
             mouseAngle: this.mouseAngle
         };
     }
+
+    moveUp(boost) {
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': false,
+            'KEY_UP': true,
+            'KEY_RIGHT': false,
+            'KEY_DOWN':false
+        };
+    }
+
+    moveUpRight(boost) {
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': false,
+            'KEY_UP': true,
+            'KEY_RIGHT': true,
+            'KEY_DOWN': false
+        };
+    }
+
+    moveRight(boost) {
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': false,
+            'KEY_UP': false,
+            'KEY_RIGHT': true,
+            'KEY_DOWN': false
+        };
+    }
+
+    moveDownRight(boost) {
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': false,
+            'KEY_UP': false,
+            'KEY_RIGHT': true,
+            'KEY_DOWN': true
+        };
+    }
+
+    moveDown(boost){
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': false,
+            'KEY_UP': false,
+            'KEY_RIGHT': false,
+            'KEY_DOWN':true
+        };
+    }
+
+    moveDownLeft(boost){
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': true,
+            'KEY_UP': false,
+            'KEY_RIGHT': false,
+            'KEY_DOWN':true
+        };
+    }
+
+    moveLeft(boost) {
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': true,
+            'KEY_UP': false,
+            'KEY_RIGHT': false,
+            'KEY_DOWN': false
+        };
+    }
+
+    moveUpLeft(boost) {
+        return {
+            'KEY_SPACE': boost,
+            'KEY_LEFT': true,
+            'KEY_UP': true,
+            'KEY_RIGHT': false,
+            'KEY_DOWN': false
+        };
+    }
+
 }
 
 module.exports = BotLogic;
